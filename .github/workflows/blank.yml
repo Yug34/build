@@ -39,5 +39,9 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: Send post req
-        run: |
-          curl -XPOST -u "${{ secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/Yug34/respond/actions/workflows/build.yaml/dispatches --data '{"ref": "main"}'
+        run : |
+          curl \
+            -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/Yug34/respond/dispatches \
+            -d '{"event_type":"opened"}'
