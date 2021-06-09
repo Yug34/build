@@ -40,4 +40,4 @@ jobs:
           echo test, and deploy your project.
       - name: Send post req
         run: |
-          curl -XPOST -u "${{ secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/Yug34/respond/actions/workflows/build.yaml/dispatches --data '{"ref": "master"}'
+          curl -XPOST -u "${{ secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/Yug34/respond/actions/workflows/build.yaml/dispatches --data '{"ref": "main"}'
